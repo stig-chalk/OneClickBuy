@@ -2,8 +2,6 @@ package com.example.oneclicktrader;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -12,10 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference dbRefer = db.getReference().child("items");
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<phoneItem> phoneItems = new ArrayList<phoneItem>();
+    private RecyclerView recycleV;
+    private RecyclerView.Adapter adp;
+    private RecyclerView.LayoutManager layoutM;
+//    private ArrayList<phoneItem> phoneItems = new ArrayList<phoneItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +30,21 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        phoneItem item1 = new phoneItem("Iphone X", "Used", 500, 128);
-        dbRefer.child("item1").setValue(item1);
+//        phoneItem item1 = new phoneItem("Iphone X", "Used", 500, 128);
+//        dbRefer.child("item3").setValue(item1);
 
-        recyclerView = (RecyclerView)findViewById(R.id.scrollView);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getApplicationContext());
+        ArrayList<cell_item_c> cell_item_cs = new ArrayList<>();
+        cell_item_cs.add(new cell_item_c("OnePlus", "Used", 350, R.drawable.ic_android));
+        cell_item_cs.add(new cell_item_c("Iphone", "New", 550, R.drawable.ic_android));
+        cell_item_cs.add(new cell_item_c("Samsung", "Used", 450, R.drawable.ic_android));
+
+        recycleV = findViewById(R.id.scrollView);
+        recycleV.setHasFixedSize(true);
+        layoutM = new LinearLayoutManager(this);
+        adp = new mAdp(cell_item_cs);
+        recycleV.setAdapter(adp);
+        recycleV.setLayoutManager(layoutM);
+
 
 
     }
