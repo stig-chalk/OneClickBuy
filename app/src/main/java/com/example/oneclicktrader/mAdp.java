@@ -23,7 +23,7 @@ public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
 
 
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             iv = itemView.findViewById(R.id.cell_image);
             brandT = itemView.findViewById(R.id.cell_brand);
@@ -36,9 +36,9 @@ public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
         this.cell_item_cs = cell_item_cs;
     }
 
-    @NonNull
+
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -48,7 +48,7 @@ public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         cell_item_c ci = cell_item_cs.get(position);
         holder.iv.setImageResource(ci.cell_imagesource);
-        holder.priceT.setText(Double.toString(ci.cell_price));
+        holder.priceT.setText(Double.toString(ci.cell_price) + "$");
         holder.condT.setText(ci.cell_condition);
         holder.brandT.setText(ci.cell_brand);
 
