@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "713635151086",
+    "firebase_url": "https://oneclicktrader-4aec9.firebaseio.com",
+    "project_id": "oneclicktrader-4aec9",
+    "storage_bucket": "oneclicktrader-4aec9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713635151086:android:7057f5a99a2e08239907ff",
+        "android_client_info": {
+          "package_name": "com.example.oneclicktrader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713635151086-unmp4cntifp0t5qpciurligsrh50cgee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oneclicktrader",
+            "certificate_hash": "a5ea3c9e6e3efdb7feb736224697a26b18ff4bb1"
+          }
+        },
+        {
+          "client_id": "713635151086-7u1glu3ppk5f2qc3of3lqvjfdpuaoqhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlX8UX2gUsf16gaFjqbFvswTLWziWettw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713635151086-7u1glu3ppk5f2qc3of3lqvjfdpuaoqhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
