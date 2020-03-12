@@ -21,13 +21,25 @@
         android:paddingRight="4dp"
         android:paddingBottom="4dp">
 
+        <TextView
+            android:id="@+id/cell_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginBottom="8dp"
+            android:text="Condition: New"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
         <ImageView
             android:id="@+id/cell_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@android:color/holo_blue_bright"
             android:padding="4dp"
             android:scaleType="centerCrop"
@@ -36,13 +48,13 @@
 
         <TextView
             android:id="@+id/cell_brand"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="10dp"
-            android:text="Iphone XS"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="8dp"
+            android:text="iPhone XS"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,13 +63,13 @@
             android:id="@+id/cell_condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginBottom="8dp"
             android:text="Condition: New"
             android:textColor="@android:color/darker_gray"
-            android:textSize="13dp"
-            android:textStyle="bold" />
+            android:textSize="12sp"
+            android:textStyle="normal" />
 
 
         <TextView
@@ -65,12 +77,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:padding="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:padding="0dp"
             android:text="500$"
             android:textColor="@android:color/black"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
 
