@@ -17,18 +17,20 @@ public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
 
     public  static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView iv;
-        public TextView  brandT;
+        public TextView  modelT;
         public TextView  condT;
         public TextView  priceT;
+        public TextView  colorT;
 
 
 
         public ViewHolder(View itemView) {
             super(itemView);
             iv = itemView.findViewById(R.id.cell_image);
-            brandT = itemView.findViewById(R.id.cell_brand);
+            modelT = itemView.findViewById(R.id.cell_model);
             condT = itemView.findViewById(R.id.cell_condition);
             priceT = itemView.findViewById(R.id.cell_price);
+            colorT = itemView.findViewById(R.id.cell_color);
         }
     }
 
@@ -50,8 +52,8 @@ public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
         holder.iv.setImageResource(ci.cell_imagesource);
         holder.priceT.setText(Double.toString(ci.cell_price) + "$");
         holder.condT.setText(ci.cell_condition);
-        holder.brandT.setText(ci.cell_brand);
-
+        holder.modelT.setText(ci.cell_model);
+        holder.colorT.setText(ci.cell_color);
     }
 
     @Override

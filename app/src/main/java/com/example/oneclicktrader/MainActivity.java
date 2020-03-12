@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 //        dbRefer.child("item3").setValue(item1);
 
         ArrayList<cell_item_c> cell_item_cs = new ArrayList<>();
-        cell_item_cs.add(new cell_item_c("OnePlus", "Used", 350, R.drawable.ic_android));
-        cell_item_cs.add(new cell_item_c("Iphone", "New", 550, R.drawable.ic_android));
-        cell_item_cs.add(new cell_item_c("Samsung", "Used", 450, R.drawable.ic_android));
+        cell_item_cs.add(new cell_item_c("OnePlus", "Oneplus 7 Pro", "Used", "Blue", 350, R.drawable.ic_android));
+        cell_item_cs.add(new cell_item_c("Apple", "iPhone XS", "New", "Gold", 550, R.drawable.ic_android));
+        cell_item_cs.add(new cell_item_c("Samsung", "Galaxy S10e", "Used", "Yellow", 450, R.drawable.ic_android));
 
         recycleV = findViewById(R.id.scrollView);
         recycleV.setHasFixedSize(true);
