@@ -94,13 +94,14 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         dbRefer.addValueEventListener(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            phoneItems.clear();
             for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     phoneItem value = ds.getValue(phoneItem.class);
+                    value.setKey(ds.getKey());
+                    value.setImageSource();
                     phoneItems.add(value);
-
                 }
-                adp = new mAdp(phoneItems, t);
-                recycleV.setAdapter(adp);
+                adp.notifyDataSetChanged();
             }
 
             @Override
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
     public void cellOnClick(int position) {
 //       System.out.println("Onclick" + position);
         Intent intent = new Intent(this, ContentViewActivity.class);
+        intent.putExtra("selectedPhone", phoneItems.get(position));
         startActivity(intent);
     }
 

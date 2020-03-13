@@ -1,10 +1,11 @@
 package com.example.oneclicktrader;
 
-public class phoneItem {
-    private String brand, model, condition, color;
+import java.io.Serializable;
+
+public class phoneItem implements Serializable {
+    private String brand, model, condition, color, key;
     private double price;
-    private int RAMSize, storageSize;
-    private int imageSource;
+    private int RAMSize, storageSize, imageSource;
 
     public phoneItem(){};
 
@@ -18,8 +19,8 @@ public class phoneItem {
         this.storageSize = storageSize;
 
         this.imageSource = R.drawable.ic_android;
-//        if (this.brand == "Apple")
-//            this.imageSource = R.drawable.ic_apple;
+        if (this.brand.equals("Apple"))
+            this.imageSource = R.drawable.ic_iphone;
 
     }
 
@@ -81,5 +82,19 @@ public class phoneItem {
 
     public int getImageSource() {
         return imageSource;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setImageSource() {
+        this.imageSource = R.drawable.ic_android;
+        if (this.brand.equals("Apple"))
+            this.imageSource = R.drawable.ic_iphone;
     }
 }
