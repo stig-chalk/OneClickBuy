@@ -50,7 +50,7 @@ public class sellActivity extends AppCompatActivity {
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference().child("items");//加入数据库
+                DatabaseReference myRef = database.getReference().child("items");
                 myRef.push().setValue(sell_phone);
                 finish();
             }

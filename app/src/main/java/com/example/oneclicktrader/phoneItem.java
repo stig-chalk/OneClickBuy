@@ -7,12 +7,15 @@ public class phoneItem implements Serializable {
 // import android.os.Parcel;
 // import android.os.Parcelable;
 
-// public class phoneItem implements Parcelable {
+    // public class phoneItem implements Parcelable {
 //     private String brand, model, condition, color;
-//     private double price;
-//     private int RAMSize, storageSize, imageSource;
+    private double price;
+    private int RAMSize, storageSize, imageSource;
 
-    public phoneItem(){};
+    public phoneItem() {
+    }
+
+    ;
 
     public phoneItem(String brand, String model, String condition, String color, double price, int RAMSize, int storageSize) {
         this.brand = brand;
@@ -29,28 +32,28 @@ public class phoneItem implements Serializable {
 
     }
 
-    protected phoneItem(Parcel in) {
-        brand = in.readString();
-        model = in.readString();
-        condition = in.readString();
-        color = in.readString();
-        price = in.readDouble();
-        RAMSize = in.readInt();
-        storageSize = in.readInt();
-        imageSource = in.readInt();
-    }
-
-    public static final Creator<phoneItem> CREATOR = new Creator<phoneItem>() {
-        @Override
-        public phoneItem createFromParcel(Parcel in) {
-            return new phoneItem(in);
-        }
-
-        @Override
-        public phoneItem[] newArray(int size) {
-            return new phoneItem[size];
-        }
-    };
+//    protected phoneItem(Parcel in) {
+//        brand = in.readString();
+//        model = in.readString();
+//        condition = in.readString();
+//        color = in.readString();
+//        price = in.readDouble();
+//        RAMSize = in.readInt();
+//        storageSize = in.readInt();
+//        imageSource = in.readInt();
+//    }
+//
+//    public static final Creator<phoneItem> CREATOR = new Creator<phoneItem>() {
+//        @Override
+//        public phoneItem createFromParcel(Parcel in) {
+//            return new phoneItem(in);
+//        }
+//
+//        @Override
+//        public phoneItem[] newArray(int size) {
+//            return new phoneItem[size];
+//        }
+//    };
 
     public String getBrand() {
         return brand;
@@ -141,3 +144,5 @@ public class phoneItem implements Serializable {
 //         dest.writeInt(imageSource);
 //     }
 // }
+    }
+}

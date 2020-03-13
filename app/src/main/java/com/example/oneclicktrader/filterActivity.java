@@ -46,7 +46,7 @@ public class filterActivity extends AppCompatActivity {
 
         Intent in = new Intent(this, MainActivity.class);
         phoneItem phone_item = new phoneItem(brand, model, condition, color, price, ram, storage);
-        in.putExtra(EXTRA_PHONE, (Parcelable) phone_item);//传回到main
+        in.putExtra("filteredPhone", phone_item);
         startActivity(in);
     }
 }
