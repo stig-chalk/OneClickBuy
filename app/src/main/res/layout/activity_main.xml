@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:background="#1E88E5"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="OneClick Buy"
+            app:title="One Click Trader"
             app:titleTextColor="#FFFFFF" />
 
         <LinearLayout

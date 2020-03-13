@@ -6,6 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#0D47A1"-->
+<!--        android:theme="@style/AppTheme.AppBarOverlay"/>-->
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#1E88E5"-->
+<!--        app:popupTheme="@style/AppTheme.PopupOverlay"-->
+<!--        app:title="One Click Trader"-->
+<!--        app:titleTextColor="#FFFFFF"/>-->
+
     <LinearLayout
         android:id="@+id/section1"
         android:layout_width="379dp"
@@ -97,9 +112,9 @@
         android:layout_width="416dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +127,9 @@
             android:layout_weight="1"
             android:background="#0D47A1"
             android:text="BUY"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp" />
 
         <Button
             android:id="@+id/offer"
@@ -121,7 +138,9 @@
             android:layout_weight="1"
             android:background="#0D47A1"
             android:text="OFFER"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

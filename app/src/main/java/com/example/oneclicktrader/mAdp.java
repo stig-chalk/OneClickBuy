@@ -13,51 +13,60 @@ import java.util.ArrayList;
 
 
 public class mAdp extends RecyclerView.Adapter<mAdp.ViewHolder> {
-    private ArrayList<cell_item_c> cell_item_cs;
+    private ArrayList<phoneItem> phoneItems;
+    private CellOnClick mCellOnClick;
 
-    public  static class ViewHolder extends RecyclerView.ViewHolder {
+
+    public  static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView iv;
-        public TextView  modelT;
-        public TextView  condT;
-        public TextView  priceT;
-        public TextView  colorT;
+        public TextView  modelT, condT, priceT, colorT;
+        CellOnClick cellOnClick;
 
-
-
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, CellOnClick cellOnClick) {
             super(itemView);
             iv = itemView.findViewById(R.id.cell_image);
             modelT = itemView.findViewById(R.id.cell_model);
             condT = itemView.findViewById(R.id.cell_condition);
             priceT = itemView.findViewById(R.id.cell_price);
             colorT = itemView.findViewById(R.id.cell_color);
+            this.cellOnClick = cellOnClick;
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            cellOnClick.cellOnClick(getAdapterPosition());
         }
     }
 
-    public mAdp(ArrayList<cell_item_c> cell_item_cs) {
-        this.cell_item_cs = cell_item_cs;
+    public mAdp(ArrayList<phoneItem> phoneItems, CellOnClick cellOnClick) {
+        this.phoneItems = phoneItems;
+        this.mCellOnClick = cellOnClick;
     }
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item, parent, false);
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, mCellOnClick);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        cell_item_c ci = cell_item_cs.get(position);
-        holder.iv.setImageResource(ci.cell_imagesource);
-        holder.priceT.setText(Double.toString(ci.cell_price) + "$");
-        holder.condT.setText(ci.cell_condition);
-        holder.modelT.setText(ci.cell_model);
-        holder.colorT.setText(ci.cell_color);
+        phoneItem pi = phoneItems.get(position);
+        holder.iv.setImageResource(pi.getImageSource());
+        holder.priceT.setText("$" + pi.getPrice());
+        holder.condT.setText(pi.getCondition());
+        holder.modelT.setText(pi.getModel());
+        holder.colorT.setText(pi.getColor());
     }
 
     @Override
     public int getItemCount() {
-        return cell_item_cs.size();
+        return phoneItems.size();
+    }
+
+    public interface CellOnClick{
+        void cellOnClick(int position);
     }
 }
