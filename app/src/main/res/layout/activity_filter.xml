@@ -7,107 +7,198 @@
     tools:context=".filterActivity">
 
     <TextView
-        android:id="@+id/textViewBrand"
+        android:id="@+id/txtViewBrand"
         android:layout_width="87dp"
         android:layout_height="39dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
         android:text="Brand"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtViewModel"
         app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewModel"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:text="Model"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewColor"
+        app:layout_constraintEnd_toStartOf="@+id/editTextModel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewBrand" />
+
+    <TextView
+        android:id="@+id/textViewStorage"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="75dp"
+        android:text="Storage"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/confirmbtn"
+        app:layout_constraintEnd_toStartOf="@+id/editTextStorage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewColor"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:text="Color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCondition"
+        app:layout_constraintEnd_toStartOf="@+id/editTextColor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewModel" />
 
     <TextView
         android:id="@+id/textViewCondition"
         android:layout_width="117dp"
         android:layout_height="40dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:text="Condition"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPrice"
         app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBrand" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewColor" />
 
     <TextView
-        android:id="@+id/textViewBrandPrice"
+        android:id="@+id/textViewPrice"
         android:layout_width="87dp"
         android:layout_height="39dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
         android:text="Price"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRAM"
         app:layout_constraintEnd_toStartOf="@+id/editTextPrice"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCondition" />
+
+    <TextView
+        android:id="@+id/textViewRAM"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:text="RAM"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewStorage"
+        app:layout_constraintEnd_toStartOf="@+id/editTextRam"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="59dp"
         android:ems="10"
         android:hint="brand name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textViewBrand"
+        app:layout_constraintBottom_toTopOf="@+id/editTextModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtViewBrand"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
         android:ems="10"
         android:hint="condition"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPrice"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewCondition"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextColor" />
 
     <EditText
         android:id="@+id/editTextPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
         android:ems="10"
         android:hint="price"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRam"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewPrice"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
         android:id="@+id/confirmbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginLeft="136dp"
-        android:layout_marginEnd="187dp"
-        android:layout_marginRight="187dp"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginRight="189dp"
+        android:layout_marginBottom="54dp"
         android:text="CONFIRM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="model"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtViewModel"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="color"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewColor"
+        app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
+
+    <EditText
+        android:id="@+id/editTextStorage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:ems="10"
+        android:hint="storage size"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/confirmbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewStorage" />
+
+    <EditText
+        android:id="@+id/editTextRam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="RAM SIZE"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/editTextStorage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewRAM"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

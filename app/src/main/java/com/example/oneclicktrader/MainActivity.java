@@ -34,23 +34,12 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference dbRefer = db.getReference().child("items");
 
-//<<<<<<< HEAD
-//<<<<<<< Updated upstream
-//    private RecyclerView recyclerView;
-//    private RecyclerView.Adapter adapter;
-//    private RecyclerView.LayoutManager layoutManager;
-//    private ArrayList<phoneItem> phoneItems = new ArrayList<phoneItem>();
 
     private RecyclerView recycleV;
     private RecyclerView.Adapter adp;
     private RecyclerView.LayoutManager layoutM;
     private Button sellbtn, filterbtn;
     private ArrayList<phoneItem> phoneItems = new ArrayList<phoneItem>();
-
-//    private RecyclerView recycleV;
-//    private RecyclerView.Adapter adp;
-//    private RecyclerView.LayoutManager layoutM;
-//    private ArrayList<phoneItem> phoneItems = new ArrayList<>();
 
 
     @Override
@@ -87,6 +76,14 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         recycleV.setAdapter(adp);
         recycleV.setLayoutManager(layoutM);
         updateData();
+        Intent intent = getIntent();
+
+
+        phoneItem searched_phone = intent.getParcelableExtra("EXTRA_PHONE");
+        //搜索得到的值都在 searched_phone
+
+
+
     }
 
     private void updateData() {

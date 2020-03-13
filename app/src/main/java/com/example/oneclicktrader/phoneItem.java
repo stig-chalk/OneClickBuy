@@ -4,8 +4,13 @@ import java.io.Serializable;
 
 public class phoneItem implements Serializable {
     private String brand, model, condition, color, key;
-    private double price;
-    private int RAMSize, storageSize, imageSource;
+// import android.os.Parcel;
+// import android.os.Parcelable;
+
+// public class phoneItem implements Parcelable {
+//     private String brand, model, condition, color;
+//     private double price;
+//     private int RAMSize, storageSize, imageSource;
 
     public phoneItem(){};
 
@@ -23,6 +28,29 @@ public class phoneItem implements Serializable {
             this.imageSource = R.drawable.ic_iphone;
 
     }
+
+    protected phoneItem(Parcel in) {
+        brand = in.readString();
+        model = in.readString();
+        condition = in.readString();
+        color = in.readString();
+        price = in.readDouble();
+        RAMSize = in.readInt();
+        storageSize = in.readInt();
+        imageSource = in.readInt();
+    }
+
+    public static final Creator<phoneItem> CREATOR = new Creator<phoneItem>() {
+        @Override
+        public phoneItem createFromParcel(Parcel in) {
+            return new phoneItem(in);
+        }
+
+        @Override
+        public phoneItem[] newArray(int size) {
+            return new phoneItem[size];
+        }
+    };
 
     public String getBrand() {
         return brand;
@@ -96,5 +124,20 @@ public class phoneItem implements Serializable {
         this.imageSource = R.drawable.ic_android;
         if (this.brand.equals("Apple"))
             this.imageSource = R.drawable.ic_iphone;
-    }
-}
+//     @Override
+//     public int describeContents() {
+//         return 0;
+//     }
+
+//     @Override
+//     public void writeToParcel(Parcel dest, int flags) {
+//         dest.writeString(brand);
+//         dest.writeString(model);
+//         dest.writeString(condition);
+//         dest.writeString(color);
+//         dest.writeDouble(price);
+//         dest.writeInt(RAMSize);
+//         dest.writeInt(storageSize);
+//         dest.writeInt(imageSource);
+//     }
+// }
