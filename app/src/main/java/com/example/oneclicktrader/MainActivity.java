@@ -145,10 +145,10 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         double maxPrice = filters.getPrice();
 
         for (phoneItem p : originalItems) {
-            if ((attrs[0].equals("nan") || (attrs[0].equals(p.getBrand().toLowerCase())))
-             && (attrs[1].equals("nan") || (attrs[1].equals(p.getModel().toLowerCase())))
-             && (attrs[2].equals("nan") || (attrs[2].equals(p.getColor().toLowerCase())))
-             && (attrs[3].equals("nan") || (attrs[3].equals(p.getCondition().toLowerCase())))
+            if ((attrs[0].equals("nan") || (p.getBrand()    .toLowerCase().equals(  attrs[0])))
+             && (attrs[1].equals("nan") || (p.getModel()    .toLowerCase().contains(attrs[1])))
+             && (attrs[2].equals("nan") || (p.getColor()    .toLowerCase().contains(attrs[2])))
+             && (attrs[3].equals("nan") || (p.getCondition().toLowerCase().equals(  attrs[3])))
              && (p.getRAMSize() >= minRam) && (p.getStorageSize() >= minStor)
              && (p.getPrice() <= maxPrice))
                 phoneItems.add(p);
