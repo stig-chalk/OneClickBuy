@@ -9,20 +9,21 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#0D47A1"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-<<<<<<< Updated upstream
+
             android:background="#09618A"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-=======
-            android:background="#1E88E5"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="OneClick Buy"
-            app:titleTextColor="#FFFFFF" />
+            app:title="One Click Trader"
+            app:titleTextColor="#FFFFFF"/>
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +31,11 @@
             android:orientation="horizontal">
 
             <Button
+
                 android:id="@+id/filterbtn"
+
+
+
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
@@ -39,14 +44,16 @@
                 android:textColorHighlight="#FFFFFF" />
 
             <Button
+
                 android:id="@+id/sellbtn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:text="SELL" />
         </LinearLayout>
->>>>>>> Stashed changes
+
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
