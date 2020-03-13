@@ -4,6 +4,7 @@ package com.example.oneclicktrader;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.LogPrinter;
 import android.view.View;
 import android.widget.Button;
 
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
     private RecyclerView.Adapter adp;
     private RecyclerView.LayoutManager layoutM;
     private Button sellbtn, filterbtn;
-    private ArrayList<phoneItem> phoneItems = new ArrayList<phoneItem>();
+    private ArrayList<phoneItem> phoneItems, originalItems;
+
 
 
     @Override
@@ -49,12 +51,10 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        phoneItem item1 = new phoneItem("Apple", "IPhone XS", "New", "Black", 550, 8, 128);
-//        phoneItem item2 = new phoneItem("Samsung", "Samsung S10", "Used", "Flamingo Pink", 450, 16, 256);
-//        phoneItem item3 = new phoneItem("OnePlus", "OnePlus 7T", "New", "Blue", 450, 8, 128);
-//        dbRefer.push().setValue(item1);
-//        dbRefer.push().setValue(item2);
-//        dbRefer.push().setValue(item3);
+        phoneItems = new ArrayList<>();
+        originalItems = new ArrayList<>();
+
+
         sellbtn = (Button) findViewById(R.id.sellbtn);
         filterbtn = (Button)findViewById(R.id.filterbtn);
         sellbtn.setOnClickListener(new View.OnClickListener() {
@@ -76,15 +76,9 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         recycleV.setAdapter(adp);
         recycleV.setLayoutManager(layoutM);
         updateData();
-        Intent intent = getIntent();
-
-
-        phoneItem searched_phone = intent.getParcelableExtra("EXTRA_PHONE");
-        //搜索得到的值都在 searched_phone
-
-
-
     }
+
+
 
     private void updateData() {
         final MainActivity t = this;
@@ -92,11 +86,13 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             phoneItems.clear();
+            originalItems.clear();
             for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     phoneItem value = ds.getValue(phoneItem.class);
                     value.setKey(ds.getKey());
                     value.setImageSource();
                     phoneItems.add(value);
+                    originalItems.add(value);
                 }
                 adp.notifyDataSetChanged();
             }
@@ -111,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
 
     @Override
     public void cellOnClick(int position) {
-//       System.out.println("Onclick" + position);
         Intent intent = new Intent(this, ContentViewActivity.class);
         intent.putExtra("selectedPhone", phoneItems.get(position));
         startActivity(intent);
@@ -121,9 +116,45 @@ public class MainActivity extends AppCompatActivity implements mAdp.CellOnClick{
         Intent in = new Intent(this, sellActivity.class);
         startActivity(in);
     }
+
     public void openFilter(){
         Intent in = new Intent(this, filterActivity.class);
-        startActivity(in);
+        startActivityForResult(in, 1);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                phoneItem filters = (phoneItem) data.getSerializableExtra("filteredPhone");
+                filterPhones(filters);
+            }
+        }
+    }
+
+    private void filterPhones(phoneItem filters) {
+        phoneItems.clear();
+
+        String[] attrs = new String[4];
+        attrs[0] = filters.getBrand().toLowerCase();
+        attrs[1] = filters.getModel().toLowerCase();
+        attrs[2] = filters.getColor().toLowerCase();
+        attrs[3] = filters.getCondition().toLowerCase();
+        int minRam = filters.getRAMSize();
+        int minStor = filters.getStorageSize();
+        double maxPrice = filters.getPrice();
+
+        for (phoneItem p : originalItems) {
+            if ((attrs[0].equals("nan") || (attrs[0].equals(p.getBrand().toLowerCase())))
+             && (attrs[1].equals("nan") || (attrs[1].equals(p.getModel().toLowerCase())))
+             && (attrs[2].equals("nan") || (attrs[2].equals(p.getColor().toLowerCase())))
+             && (attrs[3].equals("nan") || (attrs[3].equals(p.getCondition().toLowerCase())))
+             && (p.getRAMSize() >= minRam) && (p.getStorageSize() >= minStor)
+             && (p.getPrice() <= maxPrice))
+                phoneItems.add(p);
+        }
+
+        adp.notifyDataSetChanged();
     }
 }
 

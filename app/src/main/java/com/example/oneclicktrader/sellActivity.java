@@ -28,7 +28,7 @@ public class sellActivity extends AppCompatActivity {
                 TextView txtViewBrand =(TextView)findViewById(R.id.textViewBrand);
                 String brand = txtViewBrand.getText().toString();
 
-                TextView txtViewModel =(TextView)findViewById(R.id.txtViewModel);
+                TextView txtViewModel =(TextView)findViewById(R.id.textViewModel);
                 String model = txtViewModel.getText().toString();
                 TextView txtViewColor =(TextView)findViewById(R.id.textViewColor);
                 String color = txtViewModel.getText().toString();

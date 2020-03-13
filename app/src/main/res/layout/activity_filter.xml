@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filter_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".filterActivity">
@@ -14,21 +15,21 @@
         android:text="Brand"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtViewModel"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/textViewModel"
+        app:layout_constraintEnd_toStartOf="@+id/filter_brand"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtViewModel"
+        android:id="@+id/textViewModel"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:text="Model"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewColor"
-        app:layout_constraintEnd_toStartOf="@+id/editTextModel"
+        app:layout_constraintEnd_toStartOf="@+id/filter_model"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewBrand" />
@@ -42,7 +43,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/confirmbtn"
-        app:layout_constraintEnd_toStartOf="@+id/editTextStorage"
+        app:layout_constraintEnd_toStartOf="@+id/filter_storage"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,10 +55,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewCondition"
-        app:layout_constraintEnd_toStartOf="@+id/editTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/filter_color"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewModel" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewModel" />
 
     <TextView
         android:id="@+id/textViewCondition"
@@ -67,7 +68,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewPrice"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toStartOf="@+id/filter_condition"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewColor" />
@@ -80,7 +81,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewRAM"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPrice"
+        app:layout_constraintEnd_toStartOf="@+id/filter_price"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCondition" />
@@ -93,50 +94,50 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewStorage"
-        app:layout_constraintEnd_toStartOf="@+id/editTextRam"
+        app:layout_constraintEnd_toStartOf="@+id/filter_ram"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/filter_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Brand Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextModel"
+        app:layout_constraintBottom_toTopOf="@+id/filter_model"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/txtViewBrand"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/filter_condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Condition"
+        android:hint="New or Used"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPrice"
+        app:layout_constraintBottom_toTopOf="@+id/filter_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewCondition"
-        app:layout_constraintTop_toBottomOf="@+id/editTextColor" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_color" />
 
     <EditText
-        android:id="@+id/editTextPrice"
+        android:id="@+id/filter_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Price"
+        android:hint="Maximum price"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/editTextRam"
+        app:layout_constraintBottom_toTopOf="@+id/filter_ram"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewPrice"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_condition" />
 
     <Button
         android:id="@+id/confirmbtn"
@@ -149,38 +150,38 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextModel"
+        android:id="@+id/filter_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Model"
+        android:hint="Ex: iPhone X"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/filter_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtViewModel"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toEndOf="@+id/textViewModel"
+        app:layout_constraintTop_toBottomOf="@+id/filter_brand" />
 
     <EditText
-        android:id="@+id/editTextColor"
+        android:id="@+id/filter_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Color"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/filter_condition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewColor"
-        app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_model" />
 
     <EditText
-        android:id="@+id/editTextStorage"
+        android:id="@+id/filter_storage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="75dp"
         android:ems="10"
-        android:hint="Storage Size"
+        android:hint="Minimum storage(GB)"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/confirmbtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,15 +189,15 @@
         app:layout_constraintStart_toEndOf="@+id/textViewStorage" />
 
     <EditText
-        android:id="@+id/editTextRam"
+        android:id="@+id/filter_ram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="RAM Size"
+        android:hint="Minimum RAM(GB)"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextStorage"
+        app:layout_constraintBottom_toTopOf="@+id/filter_storage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textViewRAM"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_price" />
 </androidx.constraintlayout.widget.ConstraintLayout>
