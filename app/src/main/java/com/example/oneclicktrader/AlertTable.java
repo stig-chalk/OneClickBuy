@@ -17,7 +17,7 @@ public class AlertTable extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Notice").setMessage("May only offer price no lower than $" + (price*0.8) + " (80% of original price).")
+        builder.setTitle("Notice").setMessage("May only offer price no lower than $" + (price*0.8) + " (80% of original price), and no higher than original price.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

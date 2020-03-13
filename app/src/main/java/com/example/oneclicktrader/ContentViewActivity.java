@@ -82,7 +82,7 @@ public class ContentViewActivity extends AppCompatActivity implements PriceInput
 
     @Override
     public void setOfferedPrice(double priceOffered) {
-        if (priceOffered >= phoneItem.getPrice()*0.8) {
+        if ((priceOffered >= phoneItem.getPrice()*0.8) && (priceOffered <= phoneItem.getPrice())) {
             phoneItem.setPrice(priceOffered);
             dbRefer.setValue(phoneItem);
             Intent intent = new Intent(this, MainActivity.class);
