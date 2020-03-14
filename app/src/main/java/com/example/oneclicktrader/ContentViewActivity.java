@@ -92,8 +92,11 @@ public class ContentViewActivity extends AppCompatActivity implements PriceInput
             trigerAlert();
     }
 
+
     public void trigerAlert() {
-        AlertTable a = new AlertTable(phoneItem.getPrice());
+        String msg = "May only offer price no lower than $" + phoneItem.getPrice()*0.8 + " (80% of original price), and no higher than original price.\n";
+        AlertTable a = new AlertTable(msg);
         a.show(getSupportFragmentManager(), "Offer Price");
+
     }
 }

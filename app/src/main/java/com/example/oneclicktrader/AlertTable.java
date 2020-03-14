@@ -8,16 +8,19 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class AlertTable extends AppCompatDialogFragment {
-    private double price;
+    private String message;
 
-    public AlertTable(double price) {
-        this.price = price;
+    public AlertTable(String msg) {
+        this.message = msg;
     }
+
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Notice").setMessage("May only offer price no lower than $" + (price*0.8) + " (80% of original price), and no higher than original price.")
+
+        builder.setTitle("Notice").setMessage(this.message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
