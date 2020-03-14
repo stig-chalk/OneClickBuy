@@ -16,7 +16,17 @@ public class sellActivity extends AppCompatActivity {
         confbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< Updated upstream
                 finish();
+=======
+
+                if(check_available()){
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference().child("items");
+                    myRef.push().setValue(sell_phone);
+                    finish();
+                }
+>>>>>>> Stashed changes
             }
         });
     }

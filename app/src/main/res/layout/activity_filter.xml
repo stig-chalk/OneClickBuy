@@ -107,7 +107,63 @@
         android:text="CONFIRM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.573" />
+=======
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ex: iPhone X"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/filter_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewModel"
+        app:layout_constraintTop_toBottomOf="@+id/filter_brand" />
+
+    <EditText
+        android:id="@+id/editTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Color"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/filter_condition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewColor"
+        app:layout_constraintTop_toBottomOf="@+id/filter_model" />
+
+    <EditText
+        android:id="@+id/filter_storage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:ems="10"
+        android:hint="Minimum storage(GB)"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/confirmbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewStorage" />
+
+    <EditText
+        android:id="@+id/filter_ram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Minimum RAM(GB)"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/filter_storage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewRAM"
+        app:layout_constraintTop_toBottomOf="@+id/filter_price" />
+>>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>
