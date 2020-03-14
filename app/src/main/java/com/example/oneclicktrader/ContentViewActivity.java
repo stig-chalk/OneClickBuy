@@ -64,8 +64,8 @@ public class ContentViewActivity extends AppCompatActivity implements PriceInput
         brand.setText("Brand: " + phoneItem.getBrand());
         condition.setText("Condition: " + phoneItem.getCondition());
         color.setText("Color: " + phoneItem.getColor());
-        ram.setText("RAM: " + phoneItem.getRAMSize());
-        storage.setText("Storage: " + phoneItem.getStorageSize());
+        ram.setText("RAM: " + phoneItem.getRAMSize() + "GB");
+        storage.setText("Storage: " + phoneItem.getStorageSize() + "GB");
         price.setText("$" + phoneItem.getPrice());
     }
 
